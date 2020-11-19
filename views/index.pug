@@ -9,5 +9,10 @@ html(lang="en")
         link(href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection")
 
     body
+        form(action="shortMe" method="POST")
+            label(for="fullUrl") URL
+            input(name="fullUrl" id="fullUrl" type="url")
+            button(type="submit") shortme.fun
+
         div.container
             p shortme.fun/my-link
