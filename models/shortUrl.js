@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const nanoid = require('nanoid');
+const nanoId = require('nanoid');
 
-const shortUrlchema = mongoose.Schema({
+const shortUrlSchema = mongoose.Schema({
     full: {
         type: String,
         required: true,
@@ -9,7 +9,7 @@ const shortUrlchema = mongoose.Schema({
     short: {
         type: String,
         required: true,
-        default: nanoid.nanoid(7),
+        default: nanoId.nanoid(7),
     },
     clicks: {
         type: Number,
@@ -18,5 +18,5 @@ const shortUrlchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('ShortUrl', shortUrlchema);
+module.exports = mongoose.model('shortUrl', shortUrlSchema);
 

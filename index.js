@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
-const ShortUrl = require('./models/ShortUrl');
+const databaseSchema = require('./models/shortUrl');
 
 
 // settings
@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: false}));
 
 // routes
 app.get('/', async (req, res) => {
-    const shortUrls = await ShortUrl.find();
+    const shortUrls = await databaseSchema.find();
     res.render('index', {
         shortUrls: shortUrls,
     });
@@ -29,8 +29,23 @@ app.get('/', async (req, res) => {
 
 
 app.post('/shortMe', async (req, res) => {
-    await ShortUrl.create({full: req.body.fullUrl});
+    await databaseSchema.create({
+        full: req.body.fullUrl,
+    });
     res.redirect('/');
+});
+
+app.get('/:shortReq', async (req, res) => {
+    const foundShortUrl = await databaseSchema.findOne({
+        short: req.params.shortReq,
+    });
+
+    if (!foundShortUrl) return res.sendStatus(404);
+
+    foundShortUrl.clicks++;
+    foundShortUrl.save();
+
+    res.redirect(foundShortUrl.full);
 });
 
 
