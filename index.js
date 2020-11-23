@@ -17,7 +17,9 @@ mongoose.connect(`mongodb+srv://${log}:${pass}@shortme-fun-database.qeghd.mongod
 });
 
 app.use(express.urlencoded({extended: false}));
-
+app.use('*/css', express.static('public/css'));
+app.use('*/img', express.static('public/img'));
+app.use('*/js', express.static('public/js'));
 
 // routes
 app.get('/', async (req, res) => {
@@ -29,18 +31,32 @@ app.get('/', async (req, res) => {
 
 
 app.post('/shortMe', async (req, res) => {
-    await databaseSchema.create({
+    let shortUrl = await databaseSchema.findOne({
         full: req.body.fullUrl,
     });
-    res.redirect('/');
+
+    if (!shortUrl) {
+        shortUrl = await databaseSchema.create({
+            full: req.body.fullUrl,
+        });
+    }
+
+    res.render('index', {
+        short: shortUrl.short,
+        full: shortUrl.full,
+    });
 });
+
 
 app.get('/:shortReq', async (req, res) => {
     const foundShortUrl = await databaseSchema.findOne({
         short: req.params.shortReq,
     });
 
-    if (!foundShortUrl) return res.sendStatus(404);
+    if (!foundShortUrl) {
+        res.status(404);
+        return res.render('error');
+    }
 
     foundShortUrl.clicks++;
     foundShortUrl.save();
