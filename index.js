@@ -23,7 +23,12 @@ app.use('*/js', express.static('public/js'));
 
 // routes
 app.get('/', async (req, res) => {
-    const shortUrls = await databaseSchema.find();
+    const shortUrls = await databaseSchema.find()
+        .sort({
+            clicks: 1,
+        })
+        .limit(10);
+
     res.render('index', {
         shortUrls: shortUrls,
     });
@@ -36,14 +41,17 @@ app.post('/shortMe', async (req, res) => {
     });
 
     if (!shortUrl) {
-        shortUrl = await databaseSchema.create({
+        shortUrl = req.body.premium ? await databaseSchema.create({
+            full: req.body.fullUrl,
+            short: req.body.premium,
+        }) : await databaseSchema.create({
             full: req.body.fullUrl,
         });
     }
 
     res.render('index', {
-        short: shortUrl.short,
         full: shortUrl.full,
+        short: shortUrl.short,
     });
 });
 
