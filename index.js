@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
-const databaseSchema = require('./models/shortUrl');
+const databaseModel = require('./models/shortUrl');
 
 
 // settings
@@ -16,60 +16,71 @@ mongoose.connect(`mongodb+srv://${log}:${pass}@shortme-fun-database.qeghd.mongod
     useNewUrlParser: true,
 });
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use('*/css', express.static('public/css'));
 app.use('*/img', express.static('public/img'));
 app.use('*/js', express.static('public/js'));
 
 // routes
 app.get('/', async (req, res) => {
-    const shortUrls = await databaseSchema.find()
-        .sort({
-            clicks: 1,
-        })
-        .limit(10);
+    try {
+        const shortUrls = await databaseModel.find()
+            .sort({ clicks: 1 })
+            .limit(10);
 
-    res.render('index', {
-        shortUrls: shortUrls,
-    });
+        res.render('index', { shortUrls: shortUrls });
+    } catch (err) {
+        console.log(err);
+        res.render('index');
+    }
 });
 
 
 app.post('/shortMe', async (req, res) => {
-    let shortUrl = await databaseSchema.findOne({
-        full: req.body.fullUrl,
-    });
+    let code = 404;
+    let error = 'short address not found in database';
 
-    if (!shortUrl) {
-        shortUrl = req.body.premium ? await databaseSchema.create({
-            full: req.body.fullUrl,
-            short: req.body.premium,
-        }) : await databaseSchema.create({
-            full: req.body.fullUrl,
-        });
+    try {
+        let shortUrl = await databaseModel.findOne({ full: req.body.fullUrl });
+
+        if (!shortUrl) {
+            shortUrl = req.body.premium ?
+                await databaseModel.create({ full: req.body.fullUrl, short: req.body.premium }) :
+                await databaseModel.create({ full: req.body.fullUrl });
+            code = 500;
+            error = 'unable to persist resource to database';
+        }
+
+        res.render('index', { full: shortUrl.full, short: shortUrl.short });
+    } catch (err) {
+        console.log(err);
+        res.status(code);
+        res.render('error', { error: error });
     }
-
-    res.render('index', {
-        full: shortUrl.full,
-        short: shortUrl.short,
-    });
 });
 
 
 app.get('/:shortReq', async (req, res) => {
-    const foundShortUrl = await databaseSchema.findOne({
-        short: req.params.shortReq,
-    });
+    let code = 404;
+    let error = 'short address not found in database';
 
-    if (!foundShortUrl) {
-        res.status(404);
-        return res.render('error');
+    try {
+        const foundShortUrl = await databaseModel.findOne({ short: req.params.shortReq });
+
+        if (!foundShortUrl) {
+            res.status(404);
+            return res.render('error');
+        }
+
+        foundShortUrl.clicks++;
+        foundShortUrl.save();
+
+        res.redirect(foundShortUrl.full);
+    } catch (err) {
+        console.log(err);
+        res.status(code);
+        res.render('error', { error: error });
     }
-
-    foundShortUrl.clicks++;
-    foundShortUrl.save();
-
-    res.redirect(foundShortUrl.full);
 });
 
 
