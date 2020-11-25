@@ -30,7 +30,7 @@ app.get('/', async (req, res) => {
 
         res.render('index', { shortUrls: shortUrls });
     } catch (err) {
-        console.log(err);
+        console.error('trying to find url in database failed', err);
         res.render('index');
     }
 });
