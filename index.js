@@ -88,7 +88,7 @@ app.get('/:shortReq', async (req, res) => {
             return res.render('error');
         }
 
-        await shortUrl.clicks++;
+        shortUrl.clicks++;
         await shortUrl.save();
 
         res.redirect(shortUrl.full);
