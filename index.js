@@ -26,7 +26,7 @@ app.use('*/js', express.static('public/js'));
 
 const routingErrorHandler = (err, res, code, msg) => {
     console.error(msg, err);
-    res.status(500);
+    res.status(code);
     res.render('error', { error: msg });
 };
 
