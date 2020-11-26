@@ -16,6 +16,7 @@ mongoose.connect(`mongodb+srv://${log}:${pass}@shortme-fun-database.qeghd.mongod
     useNewUrlParser: true,
 }).catch(error => {
     console.error('Probably wrong credentials provided.\n', error);
+    process.exit(1);
 });
 
 app.use(express.urlencoded({ extended: false }));
