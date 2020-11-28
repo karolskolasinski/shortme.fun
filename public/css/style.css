@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #67B26F; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4ca2cd, #67B26F); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
