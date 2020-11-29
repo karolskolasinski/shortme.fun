@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
     head
-        title shortme.fun
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css"/>title shortme.fun
         // meta
         meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -11,7 +11,8 @@ html(lang="en")
     body
         header
             div.header-logo
-                img(src="public/img/logo.png").logo
+                a(href="https://shortme.fun")
+                    img(src="public/img/logo.png").logo
                 div.logo-txt SHORTME.FUN
             img(src="public/img/header-bg.png").header-bg
 
@@ -19,11 +20,14 @@ html(lang="en")
             div.main-header Short your links - easy & free
             div.main-text Dream big. With shorten, simplified links. Build shorten links with this powerful tool.
 
-        form(action="shortMe" method="POST")
-            label(for="fullUrl") URL
-            input(name="fullUrl" id="fullUrl" type="url")
-            input(name="premium" id="premium" type="text")
-            button(type="submit") shortme.fun
+        section
+            form(action="shortMe" method="POST").section-form
+                label(for="fullUrl")
+                input(name="fullUrl" id="fullUrl" type="url" placeholder="Make your links shorter")
+                label(for="premium").section-text Premium short link ending (optional):
+                input(name="premium" id="premium" type="text" placeholder="Premium").input-premium
+                span.section-text.section-example shortme.fun/Premium
+                button(type="submit") shorten
 
         div.container
             if shortUrls != null

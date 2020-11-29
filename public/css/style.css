@@ -70,3 +70,49 @@ main {
     color: #56575b;
     font-size: large;
 }
+
+.section-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background-color: #4158D9;
+}
+
+input {
+    text-align: center;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color: transparent;
+    font-size: large;
+}
+
+.input-premium {
+    align-self: flex-end;
+}
+
+input:focus {
+    outline: #D8E3F2 auto 1px;
+    border-radius: 0.4rem;
+}
+
+.section-text {
+    align-self: flex-end;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    font-size: medium;
+}
+
+.section-example {
+    padding-top: 0.5rem;
+}
+
+button {
+    margin-top: 0.5rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color: transparent;
+    font-size: large;
+    background: #1b3987;
+    color: white;
+}
