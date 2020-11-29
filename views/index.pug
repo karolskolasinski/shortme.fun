@@ -9,9 +9,15 @@ html(lang="en")
         link(href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection")
 
     body
-        header.header
-            img(src="public/img/shortme.png").logo
-            div.logo-txt shortme.fun
+        header
+            div.header-logo
+                img(src="public/img/logo.png").logo
+                div.logo-txt SHORTME.FUN
+            img(src="public/img/header-bg.png").header-bg
+
+        main
+            div.main-header Short your links - easy & free
+            div.main-text Dream big. With shorten, simplified links. Build shorten links with this powerful tool.
 
         form(action="shortMe" method="POST")
             label(for="fullUrl") URL

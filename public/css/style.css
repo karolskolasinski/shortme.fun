@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap&family=Montserrat:wght@800&display=swap');
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('./public/font/Sansation-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
     box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 html {
@@ -14,14 +25,48 @@ body {
 header {
     display: flex;
     padding: 2rem 1rem;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
-    height: 4rem;
+    height: 3rem;
 }
 
 .logo-txt {
-    color: slategrey;
-    font-family: "Lato Black", sans-serif;
-    font-size: 3rem;
+    padding-top: 0.4rem;
+    color: #3d86ca;
+    font-family: 'Sansation', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+.header-bg {
+    position: relative;
+    height: 10rem;
+    top: 1.5rem;
+    left: -5rem;
+    z-index: -1;
+}
+
+main {
+    padding: 2rem 1rem;
+}
+
+.main-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
+}
+
+.main-text {
+    padding-top: 1rem;
+    color: #56575b;
+    font-size: large;
 }

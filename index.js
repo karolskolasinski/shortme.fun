@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('*/css', express.static('public/css'));
 app.use('*/img', express.static('public/img'));
 app.use('*/js', express.static('public/js'));
+app.use('*/font', express.static('public/font'));
 
 
 const routingErrorHandler = (err, res, code, msg) => {
