@@ -57,7 +57,7 @@ app.post('/shortMe', async (req, res) => {
     try {
         shortUrl = await databaseModel.findOne({ full: req.body.fullUrl });
     } catch (err) {
-        routingErrorHandler(err, res, 404, 'An attempt to find a short address in the database has failed.\n');
+        return routingErrorHandler(err, res, 404, 'An attempt to find a short address in the database has failed.\n');
     }
 
     try {
