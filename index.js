@@ -37,7 +37,7 @@ const routingErrorHandler = (err, res, code, msg) => {
 app.get('/', async (req, res) => {
     try {
         const shortUrls = await databaseModel.find()
-            .sort({ clicks: 1 })
+            .sort({ clicks: -1 })
             .limit(10);
 
         res.render('index', { shortUrls: shortUrls });

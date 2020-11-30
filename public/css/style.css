@@ -7,7 +7,6 @@
     font-style: normal;
 }
 
-
 * {
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
@@ -20,6 +19,12 @@ html {
 body {
     margin: 0;
     height: 100%;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 0.5px #eff0f2 solid;
 }
 
 header {
@@ -39,13 +44,14 @@ header {
     height: 3rem;
 }
 
-.logo-txt {
+.logo-text {
     padding-top: 0.4rem;
     color: #3d86ca;
     font-family: 'Sansation', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 0.1rem;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .header-bg {
@@ -88,6 +94,7 @@ input {
 
 .input-premium {
     align-self: flex-end;
+    width: 70%;
 }
 
 input:focus {
@@ -113,6 +120,40 @@ button {
     border-radius: 0.4rem;
     border-color: transparent;
     font-size: large;
-    background: #1b3987;
+    background: #4393D9;
     color: white;
+}
+
+button:hover {
+    background: #1b3987;
+}
+
+.desc {
+    padding: 2rem 1rem;
+}
+
+.desc-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+}
+
+.desc-text {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: large;
+}
+
+.toplist {
+    padding-top: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+.toplink {
+    text-decoration: none;
+    color: #F207B4;
+}
+
+.desc-logo-text {
+    font-size: x-large;
 }

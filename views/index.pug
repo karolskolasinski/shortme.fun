@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
     head
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css"/>title shortme.fun
+        title shortme.fun
         // meta
         meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -13,7 +13,7 @@ html(lang="en")
             div.header-logo
                 a(href="https://shortme.fun")
                     img(src="public/img/logo.png").logo
-                div.logo-txt SHORTME.FUN
+                div.logo-text shortme.fun
             img(src="public/img/header-bg.png").header-bg
 
         main
@@ -23,19 +23,31 @@ html(lang="en")
         section
             form(action="shortMe" method="POST").section-form
                 label(for="fullUrl")
-                input(name="fullUrl" id="fullUrl" type="url" placeholder="Make your links shorter")
+                input(name="fullUrl" id="fullUrl" type="url" required="required" placeholder="Make your links shorter")
                 label(for="premium").section-text Premium short link ending (optional):
                 input(name="premium" id="premium" type="text" placeholder="Premium").input-premium
                 span.section-text.section-example shortme.fun/Premium
                 button(type="submit") shorten
 
-        div.container
-            if shortUrls != null
+        section
+            div.desc
+                div.desc-header Simple shortener - that's all you really need!
+                div.desc-text Just paste the full url into input, click "shorten" and enjoy the shortened link.
+                hr
+                div.desc-header The most recognized brands in the world love
+                    span.logo-text.desc-logo-text  shortme.fun
+                div.companies
+
+
+                div.toplist List of most clicked links:
+                if shortUrls != null
                 each val in shortUrls
                     ul
-                        li= val.short
+                        li
+                            a(href='https://shortme.fun/' + val.short).toplink shortme.fun/#{val.short}
+                            span  #{val.clicks}
 
-        div.container
-            p= short
-            p= full
+                div.container
+                    p= short
+                    p= full
 
