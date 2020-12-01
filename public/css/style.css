@@ -27,6 +27,14 @@ hr {
     border-top: 0.5px #eff0f2 solid;
 }
 
+a {
+    color: #6a6a6a;
+}
+
+a:hover {
+    color: #525252;
+}
+
 header {
     display: flex;
     padding: 2rem 1rem;
@@ -178,7 +186,7 @@ button:hover {
     background: #f3f3f3;
     display: flex;
     flex-direction: column;
-    padding: 1rem 1rem 0;
+    padding: 1.5rem 1rem 0;
 }
 
 .footer-logo {
