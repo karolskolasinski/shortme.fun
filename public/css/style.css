@@ -38,7 +38,7 @@ a:hover {
 header {
     display: flex;
     padding: 2rem 1rem;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -157,7 +157,7 @@ button:hover {
     font-weight: bold;
 }
 
-.toplink {
+.link {
     text-decoration: none;
     color: #F207B4;
 }
@@ -169,13 +169,14 @@ button:hover {
 .comp {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding-top: 1rem;
-    align-items: center;
 }
 
 .comp-item {
     padding: 2rem 1rem;
-    width: 50%;
+    max-width: 140px;
+    height: auto;
 }
 
 .comp-img {
@@ -206,4 +207,15 @@ button:hover {
 .social-item {
     font-size: 1.5rem;
     padding: 1rem 1rem 1rem;
+}
+
+@media screen and (min-width: 448px) {
+
+    .header-bg {
+        position: relative;
+        width: 95%;
+        height: auto;
+        top: 1.5rem;
+        z-index: -1;
+    }
 }

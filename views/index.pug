@@ -68,7 +68,7 @@ html(lang="en")
                 each val in shortUrls
                     ul
                         li
-                            a(href="https://shortme.fun/" + val.short).toplink shortme.fun/#{val.short}
+                            a(href="https://shortme.fun/" + val.short).link shortme.fun/#{val.short}
                             span  #{val.clicks}
 
         footer.footer
@@ -76,8 +76,13 @@ html(lang="en")
                 img(src="public/img/logo.png").logo
                 div.logo-text shortme.fun
 
-            div.footer-text © 2020 shortme.fun created with passion and ❤️ by&nbsp
-                a(href="mailto:karolskolasinski@gmail.com").toplink Karol Skolasiński
+            div.footer-text
+                span © 2020 shortme.fun created with passion and ❤️ by&nbsp
+                a(href="mailto:karolskolasinski@gmail.com").link Karol Skolasiński
+                span , logo&nbsp
+                a(href="http://www.freepik.com").link Designed by starline / Freepik
+                span , picture&nbsp
+                a(href="http://www.freepik.com").link Designed by pch.vector / Freepik
 
             div.social
                 div.social-item
