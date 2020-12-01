@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('*/css', express.static('public/css'));
 app.use('*/img', express.static('public/img'));
 app.use('*/js', express.static('public/js'));
+app.use('*/font', express.static('public/font'));
 
 
 const routingErrorHandler = (err, res, code, msg) => {
@@ -36,7 +37,7 @@ const routingErrorHandler = (err, res, code, msg) => {
 app.get('/', async (req, res) => {
     try {
         const shortUrls = await databaseModel.find()
-            .sort({ clicks: 1 })
+            .sort({ clicks: -1 })
             .limit(10);
 
         res.render('index', { shortUrls: shortUrls });

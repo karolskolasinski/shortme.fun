@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap&family=Montserrat:wght@800&display=swap');
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('./public/font/Sansation-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 0.5px #eff0f2 solid;
+}
+
+header {
+    display: flex;
+    padding: 2rem 1rem;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    height: 3rem;
+}
+
+.logo-text {
+    padding-top: 0.4rem;
+    color: #3d86ca;
+    font-family: 'Sansation', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header-bg {
+    position: relative;
+    height: 10rem;
+    top: 1.5rem;
+    left: -5rem;
+    z-index: -1;
+}
+
+main {
+    padding: 2rem 1rem;
+}
+
+.main-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
+}
+
+.main-text {
+    padding-top: 1rem;
+    color: #56575b;
+    font-size: large;
+}
+
+.section-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background-color: #4158D9;
+}
+
+input {
+    text-align: center;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color: transparent;
+    font-size: large;
+}
+
+.input-premium {
+    align-self: flex-end;
+    width: 70%;
+}
+
+input:focus {
+    outline: #D8E3F2 auto 1px;
+    border-radius: 0.4rem;
+}
+
+.section-text {
+    align-self: flex-end;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    font-size: medium;
+}
+
+.section-example {
+    padding-top: 0.5rem;
+}
+
+button {
+    margin-top: 0.5rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border-color: transparent;
+    font-size: large;
+    background: #4393D9;
+    color: white;
+}
+
+button:hover {
+    background: #1b3987;
+}
+
+.desc {
+    padding: 2rem 1rem;
+}
+
+.desc-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+}
+
+.desc-text {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: large;
+}
+
+.toplist {
+    padding-top: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+.toplink {
+    text-decoration: none;
+    color: #F207B4;
+}
+
+.desc-logo-text {
+    font-size: x-large;
+}
