@@ -7,10 +7,11 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         // CSS
         link(href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection")
+        link(href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" type="text/css" rel="stylesheet" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
 
     body
         header
-            div.header-logo
+            div.container-logo
                 a(href="https://shortme.fun")
                     img(src="public/img/logo.png").logo
                 div.logo-text shortme.fun
@@ -33,21 +34,61 @@ html(lang="en")
             div.desc
                 div.desc-header Simple shortener - that's all you really need!
                 div.desc-text Just paste the full url into input, click "shorten" and enjoy the shortened link.
+
                 hr
+
                 div.desc-header The most recognized brands in the world love
                     span.logo-text.desc-logo-text  shortme.fun
-                div.companies
+                div.comp
+                    div.comp-item
+                        img(src='public/img/space-cube.png').comp-img
+                    div.comp-item
+                        img(src='public/img/cheshire-county-hygiene-services.png').comp-img
+                    div.comp-item
+                        img(src='public/img/the-dance-studio.png').comp-img
+                    div.comp-item
+                        img(src='public/img/baby-swim.png').comp-img
+                    div.comp-item
+                        img(src='public/img/the-web-works.png').comp-img
+                    div.comp-item
+                        img(src='public/img/james-and-sons.png').comp-img
+                    div.comp-item
+                        img(src='public/img/beauty-box.png').comp-img
+                    div.comp-item
+                        img(src='public/img/greens-food-suppliers.png').comp-img
+                    div.comp-item
+                        img(src='public/img/crofts-accountants.png').comp-img
+                    div.comp-item
+                        img(src='public/img/fast-banana.png').comp-img
 
+                hr
 
                 div.toplist List of most clicked links:
                 if shortUrls != null
                 each val in shortUrls
                     ul
                         li
-                            a(href='https://shortme.fun/' + val.short).toplink shortme.fun/#{val.short}
+                            a(href="https://shortme.fun/" + val.short).toplink shortme.fun/#{val.short}
                             span  #{val.clicks}
 
-                div.container
-                    p= short
-                    p= full
+        footer.footer
+            div.container-logo.footer-logo
+                img(src="public/img/logo.png").logo
+                div.logo-text shortme.fun
 
+            div.footer-text © 2020 shortme.fun created with passion and ❤️ by&nbsp
+                a(href="mailto:karolskolasinski@gmail.com").toplink Karol Skolasiński
+
+            div.social
+                div.social-item
+                    a(href="https://twitter.com")
+                        i.fab.fa-twitter
+                div.social-item
+                    a(href="https://instagram.com")
+                        i.fab.fa-instagram
+                div.social-item
+                    a(href="https://facebook.com")
+                        i.fab.fa-facebook-f
+                div.social-item
+                    a(href="https://karolskolasinski.pl")
+                        i.fas.fa-globe

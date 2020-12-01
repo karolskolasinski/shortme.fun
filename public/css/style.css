@@ -34,14 +34,14 @@ header {
     overflow: hidden;
 }
 
-.header-logo {
+.container-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .logo {
-    height: 3rem;
+    height: 2rem;
 }
 
 .logo-text {
@@ -156,4 +156,46 @@ button:hover {
 
 .desc-logo-text {
     font-size: x-large;
+}
+
+.comp {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    align-items: center;
+}
+
+.comp-item {
+    padding: 2rem 1rem;
+    width: 50%;
+}
+
+.comp-img {
+    width: 100%;
+}
+
+.footer {
+    background: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 0;
+}
+
+.footer-logo {
+    align-self: flex-start;
+}
+
+.footer-text {
+    padding-top: 1rem;
+    font-size: small;
+}
+
+.social {
+    display: flex;
+    align-self: center;
+}
+
+.social-item {
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1rem;
 }
