@@ -34,11 +34,11 @@ html(lang="en")
             div.desc
                 div.desc-header Simple shortener - that's all you really need!
                 div.desc-text Just paste the full url into input, click "shorten" and enjoy the shortened link.
-
-                hr
+                div.divider-desc
 
                 div.desc-header The most recognized brands in the world love
-                    span.logo-text.desc-logo-text  shortme.fun
+                span.logo-text.desc-logo-text  shortme.fun
+
                 div.comp
                     div.comp-item
                         img(src='public/img/space-cube.png').comp-img
@@ -60,13 +60,12 @@ html(lang="en")
                         img(src='public/img/crofts-accountants.png').comp-img
                     div.comp-item
                         img(src='public/img/fast-banana.png').comp-img
+                div.divider-comp
 
-                hr
-
-                div.toplist List of most clicked links:
-                if shortUrls != null
-                each val in shortUrls
-                    ul
+            div.toplist List of most clicked links:
+                ul
+                    if shortUrls != null
+                    each val in shortUrls
                         li
                             a(href="https://shortme.fun/" + val.short).link shortme.fun/#{val.short}
                             span  #{val.clicks}
