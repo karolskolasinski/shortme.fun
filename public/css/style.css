@@ -36,16 +36,21 @@ a:hover {
 }
 
 header {
+    margin: 0 auto;
+    max-width: 1200px;
     display: flex;
-    padding: 2rem 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
+    padding: 2rem 1rem;
     overflow: hidden;
 }
 
-.container-logo {
+.header-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: fit-content;
 }
 
 .logo {
@@ -64,26 +69,25 @@ header {
 
 .header-bg {
     position: relative;
-    height: 10rem;
-    top: 1.5rem;
-    left: -5rem;
+    width: 25rem;
+    top: -2.5rem;
+    left: 1rem;
     z-index: -1;
 }
 
-main {
-    padding: 2rem 1rem;
+.header-desc {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.main-header {
+.header-title {
     font-family: 'Montserrat', sans-serif;
     font-size: xx-large;
 }
 
-.main-text {
+.header-text {
     padding-top: 1rem;
     color: #56575b;
     font-size: large;
@@ -237,15 +241,49 @@ li {
 @media screen and (min-width: 448px) {
 
     .header-bg {
-        position: relative;
         width: 95%;
-        height: auto;
-        top: 1.5rem;
-        z-index: -1;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 
+    header {
+        flex-direction: row;
+    }
+
+    .header-logo {
+        padding-bottom: 1rem;
+    }
+
+    .header-bg {
+        position: static;
+        order: 3;
+        width: 40%;
+    }
+
+    .header-desc {
+        align-items: flex-start;
+        width: 60%;
+    }
+
+    .filler {
+        width: 100%;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1060px) {
+
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-text {
+        color: grey;
+        font-size: x-large;
+    }
 
 }
