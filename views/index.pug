@@ -24,22 +24,23 @@ html(lang="en")
                 div.header-text Dream big. With shorten, simplified links. Build shorten links with this powerful tool.
 
         main
-            section
-                form(action="shortMe" method="POST").section-form
+            section.section-wrapper
+                form(action="shortMe" method="POST")
                     label(for="fullUrl")
-                    input(name="fullUrl" id="fullUrl" type="url" required="required" placeholder="Make your links shorter")
-                    label(for="premium").section-text Premium short link ending (optional):
-                    input(name="premium" id="premium" type="text" placeholder="Premium").input-premium
-                    span.section-text.section-example shortme.fun/Premium
-                    button(type="submit") shorten
+                    input(name="fullUrl" id="fullUrl" type="url" required="required" placeholder="Make your links shorter").input-standard
+                    div.premium-wrapper
+                        label(for="premium").section-text Premium short link ending (optional):
+                        input(name="premium" id="premium" type="text" placeholder="Premium").input-premium
+                        span.section-text.section-example shortme.fun/Premium
+                    button(type="submit") Shorten
 
             section
                 div.desc
-                    div.desc-header Simple shortener - that's all you really need!
+                    div.desc-title Simple shortener - that's all you really need!
                     div.desc-text Just paste the full url into input, click "shorten" and enjoy the shortened link.
                     div.divider-desc
 
-                    div.desc-header The most recognized brands in the world love
+                    div.desc-title The most recognized brands in the world love
                     span.logo-text.desc-logo-text  shortme.fun
 
                     div.comp
@@ -73,29 +74,30 @@ html(lang="en")
                                 a(href="https://shortme.fun/" + val.short).link shortme.fun/#{val.short}
                                 span  #{val.clicks}
 
-        footer.footer
-            div.container-logo.footer-logo
-                img(src="public/img/logo.png").logo
-                div.logo-text shortme.fun
+        footer
+            div.footer
+                div.footer-logo
+                    img(src="public/img/logo.png").logo
+                    div.logo-text shortme.fun
 
-            div.footer-text
-                span © 2020 shortme.fun created with passion and ❤️ by&nbsp
-                a(href="mailto:karolskolasinski@gmail.com").link Karol Skolasiński
-                span , logo&nbsp
-                a(href="http://www.freepik.com").link Designed by starline / Freepik
-                span , picture&nbsp
-                a(href="http://www.freepik.com").link Designed by pch.vector / Freepik
+                div.footer-text
+                    span © 2020 shortme.fun created with passion and ❤️ by&nbsp
+                    a(href="mailto:karolskolasinski@gmail.com").link Karol Skolasiński
+                    span , logo&nbsp
+                    a(href="http://www.freepik.com").link Designed by starline / Freepik
+                    span , picture&nbsp
+                    a(href="http://www.freepik.com").link Designed by pch.vector / Freepik
 
-            div.social
-                div.social-item
-                    a(href="https://twitter.com")
-                        i.fab.fa-twitter
-                div.social-item
-                    a(href="https://instagram.com")
-                        i.fab.fa-instagram
-                div.social-item
-                    a(href="https://facebook.com")
-                        i.fab.fa-facebook-f
-                div.social-item
-                    a(href="https://karolskolasinski.pl")
-                        i.fas.fa-globe
+                div.social
+                    div.social-item
+                        a(href="https://twitter.com")
+                            i.fab.fa-twitter
+                    div.social-item
+                        a(href="https://instagram.com")
+                            i.fab.fa-instagram
+                    div.social-item
+                        a(href="https://facebook.com")
+                            i.fab.fa-facebook-f
+                    div.social-item
+                        a(href="https://karolskolasinski.pl")
+                            i.fas.fa-globe
