@@ -21,12 +21,6 @@ body {
     height: 100%;
 }
 
-hr {
-    margin: 2rem 0;
-    border: 0;
-    border-top: 0.5px #eff0f2 solid;
-}
-
 a {
     color: #6a6a6a;
 }
@@ -35,6 +29,18 @@ a:hover {
     color: #525252;
 }
 
+hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 0.5px #eff0f2 solid;
+}
+
+li {
+    padding: 0.5rem 0 0.5rem;
+    font-weight: normal;
+}
+
+/*header*/
 header {
     margin: 0 auto;
     max-width: 1200px;
@@ -82,7 +88,7 @@ header {
     width: 100%;
 }
 
-.header-title {
+.header-title, .desc-title {
     font-family: 'Montserrat', sans-serif;
     font-size: xx-large;
 }
@@ -93,6 +99,7 @@ header {
     font-size: large;
 }
 
+/*main*/
 .section-wrapper {
     background-color: #4158D9;
 }
@@ -114,6 +121,11 @@ input {
     font-size: large;
 }
 
+input:focus {
+    outline: #D8E3F2 auto 1px;
+    border-radius: 0.4rem;
+}
+
 .premium-wrapper {
     display: flex;
     flex-direction: column;
@@ -122,11 +134,6 @@ input {
 .input-premium {
     align-self: flex-end;
     width: 50%;
-}
-
-input:focus {
-    outline: #D8E3F2 auto 1px;
-    border-radius: 0.4rem;
 }
 
 .section-text {
@@ -156,12 +163,7 @@ button:hover {
     background: #1b3987;
 }
 
-li {
-    padding: 0.5rem 0 0.5rem;
-    font-weight: normal;
-}
-
-.divider-desc {
+.divider-desc, .divider-comp {
     margin: 3rem 0;
     width: 100%;
     max-width: 1200px;
@@ -170,9 +172,6 @@ li {
 
 .divider-comp {
     margin: 1rem 0 3rem;
-    width: 100%;
-    max-width: 1200px;
-    border-top: 0.5px #eff0f2 solid;
 }
 
 .desc {
@@ -184,7 +183,6 @@ li {
 }
 
 .desc-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: x-large;
 }
 
@@ -193,7 +191,7 @@ li {
     font-size: large;
 }
 
-.toplist {
+.top-list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,6 +227,7 @@ li {
     width: 100%;
 }
 
+/*footer*/
 footer {
     background: #f3f3f3;
 }
@@ -264,24 +263,24 @@ footer {
     padding: 1rem 1rem 1rem;
 }
 
+/*small screens*/
 @media screen and (min-width: 448px) {
-
+    /*header*/
     .header-bg {
         width: 95%;
     }
 }
 
-
 @media screen and (min-width: 579px) {
-
+    /*footer*/
     .footer-logo {
         padding-bottom: 0;
     }
 }
 
-
+/*tablet*/
 @media screen and (min-width: 992px) {
-
+    /*header*/
     header {
         flex-direction: row;
     }
@@ -301,17 +300,23 @@ footer {
         width: 60%;
     }
 
-    .filler {
-        width: 100%;
-    }
-
     .header-title {
         font-size: 2rem;
     }
 
+    .filler {
+        width: 100%;
+    }
+
+    /*main*/
     form {
         flex-direction: row;
         align-content: space-around;
+    }
+
+    input {
+        height: 4rem;
+        font-size: x-large;
     }
 
     .input-standard {
@@ -319,12 +324,8 @@ footer {
         flex-grow: 3;
     }
 
-    button {
-        order: 2;
-        flex-grow: 1;
-        height: 4rem;
-        margin: 0 0 0 2rem;
-        font-size: x-large;
+    .input-premium {
+        width: 40%;
     }
 
     .premium-wrapper {
@@ -335,26 +336,32 @@ footer {
         padding-top: 1rem;
     }
 
-    .input-premium {
-        width: 40%;
-    }
-
     .section-example {
         padding-bottom: 0;
     }
 
-    input {
+    button {
+        order: 2;
+        flex-grow: 1;
         height: 4rem;
+        margin: 0 0 0 2rem;
         font-size: x-large;
     }
 }
 
+/*desktop*/
 @media screen and (min-width: 1060px) {
-
+    /*header*/
     .header-title {
         font-size: 2.5rem;
     }
 
+    .header-text {
+        color: grey;
+        font-size: x-large;
+    }
+
+    /*main*/
     .desc-title {
         font-size: 2rem;
     }
@@ -362,10 +369,5 @@ footer {
     .desc-text {
         color: grey;
         font-size: 1.2rem;
-    }
-
-    .header-text {
-        color: grey;
-        font-size: x-large;
     }
 }
