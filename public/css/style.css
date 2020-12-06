@@ -79,6 +79,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .header-title {
@@ -243,7 +244,6 @@ footer {
 }
 
 .footer-logo {
-    padding-right: 3rem;
     padding-bottom: 1rem;
     text-align: center;
 }
@@ -251,6 +251,7 @@ footer {
 .footer-text {
     max-width: 460px;
     font-size: small;
+    text-align: justify;
 }
 
 .social {
@@ -269,6 +270,16 @@ footer {
         width: 95%;
     }
 }
+
+
+
+@media screen and (min-width: 579px) {
+
+    .footer-logo {
+        padding-right: 3rem;
+    }
+}
+
 
 @media screen and (min-width: 627px) {
 
