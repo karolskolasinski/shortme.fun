@@ -3,11 +3,23 @@ html(lang="en")
     head
         title shortme.fun
         // meta
-        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+
+        meta(property="og:image" content="https://www.shortme.fun/img/logo.png")
+        meta(name="author" content="Karol Skolasiński")
+        meta(name="description" content="shortme.fun - link shortener")
+        meta(name="keywords" content="shortener, link-shortener, shrink, shrink link, short link, tiny url, url short")
         // CSS
         link(href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection")
 
     body
-        div.container
-            p NOTHING HERE, GO HOME!
+        div.error
+            h1 OOPS... NOTHING HERE!
+            div.header-logo
+                a(href="https://shortme.fun")
+                    img(src="public/img/logo.png").logo
+                div.logo-text shortme.fun
+            p ERROR MESSAGE:
+            p= error
