@@ -236,7 +236,7 @@ footer {
 .footer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
@@ -272,16 +272,7 @@ footer {
 }
 
 
-
 @media screen and (min-width: 579px) {
-
-    .footer-logo {
-        padding-right: 3rem;
-    }
-}
-
-
-@media screen and (min-width: 627px) {
 
     .footer-logo {
         padding-bottom: 0;
