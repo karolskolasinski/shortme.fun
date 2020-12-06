@@ -63,7 +63,6 @@ header {
     font-family: 'Sansation', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 0.1rem;
-    /*text-align: center;*/
     text-transform: uppercase;
 }
 
@@ -121,7 +120,7 @@ input {
 
 .input-premium {
     align-self: flex-end;
-    width: 70%;
+    width: 50%;
 }
 
 input:focus {
@@ -142,8 +141,8 @@ input:focus {
 }
 
 button {
-    margin-top: 0.5rem;
     height: 3rem;
+    margin-top: 0.5rem;
     border-radius: 0.4rem;
     border-color: transparent;
     font-size: large;
@@ -237,24 +236,26 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 1.5rem 1rem 0;
+    padding: 1.5rem 1rem;
 }
 
 .footer-logo {
+    padding-right: 3rem;
     padding-bottom: 1rem;
     text-align: center;
 }
 
 .footer-text {
-    /*padding-top: 1rem;*/
+    max-width: 460px;
     font-size: small;
 }
 
 .social {
     display: flex;
-    /*align-self: center;*/
+    padding-top: 0.5rem;
 }
 
 .social-item {
@@ -269,11 +270,10 @@ footer {
     }
 }
 
-@media screen and (min-width: 588px) {
+@media screen and (min-width: 627px) {
 
-    .footer {
-        flex-direction: row;
-        align-content: space-around;
+    .footer-logo {
+        padding-bottom: 0;
     }
 }
 
@@ -306,27 +306,6 @@ footer {
     .header-title {
         font-size: 2rem;
     }
-}
-
-@media screen and (min-width: 1060px) {
-
-    .header-title {
-        font-size: 2.5rem;
-    }
-
-    .desc-title {
-        font-size: 2rem;
-    }
-
-    .desc-text {
-        color: grey;
-        font-size: 1.2rem;
-    }
-
-    .header-text {
-        color: grey;
-        font-size: x-large;
-    }
 
     form {
         flex-direction: row;
@@ -355,7 +334,7 @@ footer {
     }
 
     .input-premium {
-        width: 30%;
+        width: 40%;
     }
 
     .section-example {
@@ -364,6 +343,27 @@ footer {
 
     input {
         height: 4rem;
+        font-size: x-large;
+    }
+}
+
+@media screen and (min-width: 1060px) {
+
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .desc-title {
+        font-size: 2rem;
+    }
+
+    .desc-text {
+        color: grey;
+        font-size: 1.2rem;
+    }
+
+    .header-text {
+        color: grey;
         font-size: x-large;
     }
 }
