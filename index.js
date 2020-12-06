@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 const databaseModel = require('./models/shortUrl');
+const favicon = require('serve-favicon');
 
 
 // settings
@@ -24,6 +25,7 @@ app.use('*/css', express.static('public/css'));
 app.use('*/img', express.static('public/img'));
 app.use('*/js', express.static('public/js'));
 app.use('*/font', express.static('public/font'));
+app.use(favicon(__dirname + '/favicon.ico'));
 
 
 const routingErrorHandler = (err, res, code, msg) => {
