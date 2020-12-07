@@ -163,6 +163,47 @@ button:hover {
     background: #1b3987;
 }
 
+.shorten-wrapper {
+    padding: 0 1rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.shorten {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    border-radius: 0.4rem;
+    border-color: transparent;
+    font-size: large;
+    color: #1d1f21;
+    padding: 1rem 1rem;
+    background: white;
+}
+
+.full {
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+
+.short {
+    display: flex;
+    flex-direction: column;
+}
+
+.short-link {
+    overflow: hidden;
+}
+
+.copy {
+    color: #1d1f21;
+    background: #D8E3F2;
+}
+
+.copy:hover {
+    background: #b5c9ee;
+}
+
 .divider-desc, .divider-comp {
     margin: 3rem 0;
     width: 100%;
@@ -272,6 +313,10 @@ footer {
     padding: 2rem;
 }
 
+.copied, .copied:hover {
+    background-color: lightgreen;
+}
+
 /*small screens*/
 @media screen and (min-width: 448px) {
     /*header*/
@@ -355,6 +400,27 @@ footer {
         height: 4rem;
         margin: 0 0 0 2rem;
         font-size: x-large;
+    }
+
+    .shorten {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .short {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .full {
+        padding: 0;
+    }
+
+    .copy {
+        font-size: large;
+        height: 3rem;
+        width: 8rem;
     }
 }
 

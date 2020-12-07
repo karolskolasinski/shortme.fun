@@ -70,7 +70,11 @@ app.post('/shortMe', async (req, res) => {
                 await databaseModel.create({ full: req.body.fullUrl });
         }
 
-        res.render('index', { full: shortUrl.full, short: shortUrl.short });
+        const shortUrls = await databaseModel.find()
+            .sort({ clicks: -1 })
+            .limit(10);
+
+        res.render('index', { full: shortUrl.full, short: shortUrl.short, shortUrls: shortUrls });
     } catch (err) {
         routingErrorHandler(err, res, 500, 'An attempt to create the resource to the database has failed.\n');
     }

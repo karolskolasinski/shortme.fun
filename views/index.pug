@@ -41,6 +41,15 @@ html(lang="en")
                         span.section-text.section-example shortme.fun/Premium
                     button(type="submit") Shorten
 
+                if full || short
+                    div.shorten-wrapper
+                        div.shorten
+                            div.full= full
+                            div.short
+                                div.short-link
+                                    a(href="https://shortme.fun/" + short).link shortme.fun/#{short}
+                                button(onclick="copy()").copy Copy
+
             section
                 div.desc
                     div.desc-title Simple shortener - that's all you really need!
@@ -73,13 +82,13 @@ html(lang="en")
                             img(src='public/img/fast-banana.png').comp-img
                     div.divider-comp
 
-                div.top-list List of most clicked links:
-                    ul
-                        if shortUrls != null
-                        each val in shortUrls
-                            li
-                                a(href="https://shortme.fun/" + val.short).link shortme.fun/#{val.short}
-                                span  #{val.clicks}
+                if shortUrls
+                    div.top-list List of most clicked links:
+                        ul
+                            each val in shortUrls
+                                li
+                                    a(href="https://shortme.fun/" + val.short).link shortme.fun/#{val.short}
+                                    span  #{val.clicks}
 
         footer
             div.footer
@@ -108,3 +117,5 @@ html(lang="en")
                     div.social-item
                         a(href="https://karolskolasinski.pl")
                             i.fas.fa-globe
+
+script(src="public/js/copy.js")
