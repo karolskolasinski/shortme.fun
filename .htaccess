@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^shortme.fun$ [NC]
+RewriteRule (.*) http://www.shortme.fun/$1 [R=301,L] 
