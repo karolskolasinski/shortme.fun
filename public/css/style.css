@@ -101,7 +101,7 @@ header {
 
 /*main*/
 .section-wrapper {
-    background-color: #4158D9;
+    background-color: #4158d9;
 }
 
 form {
@@ -122,7 +122,7 @@ input {
 }
 
 input:focus {
-    outline: #D8E3F2 auto 1px;
+    outline: #d8e3f2 auto 1px;
     border-radius: 0.4rem;
 }
 
@@ -154,7 +154,7 @@ button {
     border-radius: 0.4rem;
     border-color: transparent;
     font-size: large;
-    background: #4393D9;
+    background: #4393d9;
     color: white;
     cursor: pointer;
 }
@@ -197,8 +197,7 @@ button:hover {
 
 .copy {
     color: #1d1f21;
-    background: #D8E3F2;
-
+    background: #d8e3f2;
 }
 
 .copy:hover {
@@ -244,7 +243,7 @@ button:hover {
 
 .link {
     text-decoration: none;
-    color: #F207B4;
+    color: #f207b4;
 }
 
 .desc-logo-text {

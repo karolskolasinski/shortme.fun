@@ -19,7 +19,7 @@ html(lang="en")
     body
         header
             div.header-logo
-                a(href="https://shortme.fun")
+                a(href="http://shortme.fun")
                     img(src="public/img/logo.png").logo
                 div.logo-text shortme.fun
             div.filler
@@ -47,7 +47,7 @@ html(lang="en")
                             div.full= full
                             div.short
                                 div.short-link
-                                    a(href="https://shortme.fun/" + short).link shortme.fun/#{short}
+                                    a(href="http://shortme.fun/" + short).link shortme.fun/#{short}
                                 button(onclick="copy()").copy Copy
 
             section
@@ -87,7 +87,7 @@ html(lang="en")
                         ul
                             each val in shortUrls
                                 li
-                                    a(href="https://shortme.fun/" + val.short).link shortme.fun/#{val.short}
+                                    a(href="http://shortme.fun/" + val.short).link shortme.fun/#{val.short}
                                     span  #{val.clicks}
 
         footer
