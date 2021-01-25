@@ -14,7 +14,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.15",
+    "mongoose": "^5.11.13",
     "nanoid": "^3.1.18",
     "nodemon": "^2.0.6",
     "pug": "^3.0.0",
